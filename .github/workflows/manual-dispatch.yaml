@@ -4,7 +4,10 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        type: mittomen
+        type: choice
+        options:
+          - hello
+          - bello
         description: Environment
 
 jobs:

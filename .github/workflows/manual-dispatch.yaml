@@ -1,0 +1,19 @@
+name: Manual deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: environment
+        description: Environment
+
+jobs:
+  check-bats-version:
+    runs-on: windows-latest
+    steps:
+      #      - uses: actions/checkout@v4
+      #      - uses: actions/setup-node@v4
+      #        with:
+      #          node-version: '20'
+      - run: npm install -g bats
+      - run: bats -v
